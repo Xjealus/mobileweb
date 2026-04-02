@@ -12,7 +12,7 @@ export default defineConfig({
     legacy()
   ],
   build : {
-    outDir: path.resolve(__dirname, '../../docs/apps/lab01_vue'),
+    outDir: path.resolve(__dirname, '../../docs/lab01_vue'),
   },
   resolve: {
     alias: {
