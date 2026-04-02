@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KKU Campus Guide</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #4a00e0;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>KKU Campus Guide</h2>
+  <p>กฤติน ตรัสกมล 663380584-1</p>
+
+  <!-- Canvas -->
+  <canvas id="logo" width="200" height="100"></canvas>
+</header>
+
+<main class="container">
+
+  <div class="card">
+    <h3>หอสมุด มข.</h3>
+    <img src="https://via.placeholder.com/300">
+    <p>สถานที่อ่านหนังสือและค้นคว้า</p>
+  </div>
+
+  <div class="card">
+    <h3>บึงสีฐาน</h3>
+    <img src="https://via.placeholder.com/300">
+    <p>สถานที่พักผ่อน วิ่งออกกำลังกาย</p>
+  </div>
+
+  <div class="card">
+    <h3>โรงอาหารกลาง</h3>
+    <img src="https://via.placeholder.com/300">
+    <p>แหล่งรวมอาหารราคาประหยัด</p>
+  </div>
+
+  <div class="card">
+    <h3>คณะวิศวกรรม</h3>
+    <img src="https://via.placeholder.com/300">
+    <p>สถานที่เรียนของนักศึกษา</p>
+  </div>
+
+</main>
+
+<!-- Form -->
+<section style="padding:20px;">
+  <h3>แนะนำสถานที่</h3>
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="3e12a063-babf-4f8a-82fe-0b91cde67682">
+
+    <input type="text" name="name" placeholder="ชื่อสถานที่" required><br><br>
+    <textarea name="message" placeholder="รายละเอียด"></textarea><br><br>
+    <input type="url" name="image" placeholder="URL รูปภาพ"><br><br>
+
+    <button type="submit">ส่ง</button>
+  </form>
+</section>
+
+<footer>
+  <p>KKU Guide</p>
+</footer>
+
+<script>
+  const canvas = document.getElementById("logo");
+  const ctx = canvas.getContext("2d");
+
+  let x = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "yellow";
+    ctx.fillRect(x, 20, 50, 50);
+    x += 2;
+    if (x > canvas.width) x = 0;
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+</body>
+</html>
